@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(to right, #1e40af 0%, #8b5cf6 50%, #6d28d9 75%, #7c3aed 90%, #6d28d9 100%);
+    color: #f3f4f6;
+    font-family: 'Ludica', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+/* Home */
+
+.Home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: 100vh;
+}
+
+.myself {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
+}
+
+.text-content h2 {
+  font-size: 2rem;
+  margin: 0;
+  color: #f8f8f8;
+}
+
+.text-content h3 {
+  font-size: 3.0rem;
+  margin: 10px 0;
+  color:rgb(255, 191, 0); 
+}
+
+.text-content h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 10px 0 20px;
+  color: #ffffff;
+}
+
+.text-content p {
+  margin: 10px 0;
+  color: #d0d0ff;
+  line-height: 1.6;
+}
+
+.btn {
+  background-color: #ff4b2b;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e03d22;
+}
+
+/* Centered profile image to the right */
+.image-container {
+  flex: 0 0 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.profile-picture {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* skills section */
+
+#skills h2 {
+    font-size: 2.3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 36px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    font-family: 'Ludica', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.skill-card {
+    background: rgba(255,255,255,0.93);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(124, 58, 237, 0.09);
+    padding: 28px 22px 22px 22px;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border-left: 6px solid #a78bfa;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: -40px;
+    width: 80px; height: 80px;
+    background: radial-gradient(circle, #c4b5fd 0%, transparent 70%);
+    z-index: 0;
+}
+
+.skill-card h3 {
+    color: #7c3aed;
+    font-size: 1.25rem;
+    margin-bottom: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    position: relative;
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+}
+
+.skill-card li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.skill-name {
+    flex: 0 0 110px;
+    font-weight: 500;
+    color: #4b1979;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.bar {
+    flex: 1;
+    height: 12px;
+    background: #0c0c0c;
+    border-radius: 8px;
+    margin-left: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px #ede9fe;
+    position: relative;
+}
+
+.fill {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 1s cubic-bezier(.4,2,.6,1);
+    background: linear-gradient(90deg, #a78bfa 0%, #7c3aed 100%);
+    box-shadow: 0 2px 8px #a78bfa33;
+    
+}
+
+.fill.html { width: 95%; background: linear-gradient(90deg, #f59e42 0%, #fbbf24 78%);}
+.fill.css { width: 90%; background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);}
+.fill.js { width: 85%; background: linear-gradient(90deg, #facc15 0%, #f59e42 100%);}
+.fill.tailwind { width: 80%; background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);}
+.fill.node { width: 80%; background: linear-gradient(90deg, #16a34a 0%, #22d3ee 100%);}
+.fill.rest { width: 75%; background: linear-gradient(90deg, #f472b6 0%, #a78bfa 100%);}
+.fill.express { width: 70%; background: linear-gradient(90deg, #6366f1 0%, #a3e635 100%);}
+.fill.mongo { width: 85%; background: linear-gradient(90deg, #10b981 0%, #a3e635 100%);}
+.fill.mysql { width: 80%; background: linear-gradient(90deg, #2563eb 0%, #fbbf24 100%);}
+.fill.python { width: 90%; background: linear-gradient(90deg, #2563eb 0%, #facc15 100%);}
+.fill.java { width: 80%; background: linear-gradient(90deg, #f87171 0%, #fbbf24 100%);}
+.fill.c { width: 75%; background: linear-gradient(90deg, #2563eb 0%, #a7f3d0 100%);}
+.fill.cpp { width: 70%; background: linear-gradient(90deg, #6366f1 0%, #a7f3d0 100%);}
+.fill.git { width: 85%; background: linear-gradient(90deg, #f87171 0%, #fbbf24 100%);}
+.fill.linux { width: 80%; background: linear-gradient(90deg, #111827 0%, #fbbf24 100%);}
+
+.skill-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(124, 58, 237, 0.18);
+    border-left: 6px solid #7c3aed;
+}
+
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    #skills {
+        padding: 24px 0 32px 0;
+        border-radius: 0 0 18px 18px;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0 8px;
+    }
+    .skill-card {
+        padding: 18px 10px 14px 10px;
+    }
+    #skills h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* education */
+#education {
+    padding: 10px 20px;
+    width: 100vw;
+    max-width: none;
+    margin: 40px 0;
+    box-shadow: 0 4px 24px rgba(124, 58, 237, 0.08);
+}
+
+#education h2 {
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 24px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-family: 'Ludica', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#education ul { 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#education .btech,
+#education .intermediate,
+#education .ssc {
+    background: rgba(255,255,255,0.85);
+    border-left: 5px solid #7c3aed;
+    margin-bottom: 24px;
+    padding: 20px 24px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.05);
+}
+
+#education h3 {
+    margin: 0 0 8px 0;
+    color: #7c3aed;
+    font-size: 1.2rem;
+}
+
+#education strong {
+    display: block;
+    color: #333;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+#education p {
+    margin: 2px 0;
+    color: #444;
+    font-size: 1rem;
+}
+
+#education .stream {
+    font-style: italic;
+    color: #5b21b6;
+    font-size: 0.98rem;
+}
+#education .btech,
+#education .intermediate,
+#education .ssc {
+    transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+}
+
+#education .btech:hover,
+#education .intermediate:hover,
+#education .ssc:hover {
+    box-shadow: 0 8px 32px rgba(124, 58, 237, 0.18);
+    transform: translateY(-4px) scale(1.02);
+    background: rgba(255,255,255,0.95);
+}
+
+
+/* Entrance */
+#entrance-page {
+        position: fixed;
+        z-index: 9999;
+        inset: 0;
+        background: linear-gradient(135deg, #4f46e5 0%, #a21caf 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-family: 'Segoe UI', sans-serif;
+        transition: opacity 1s;
+      }
+      #entrance-page.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #entrance-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin-bottom: 1.5rem;
+        animation: fadeIn 1.2s;
+      }
+      #entrance-spinner {
+        border: 6px solid #fff3;
+        border-top: 6px solid #fff;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        animation: spin 1s linear infinite;
+        margin-bottom: 1.5rem;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(40px);}
+        to { opacity: 1; transform: translateY(0);}
+      }

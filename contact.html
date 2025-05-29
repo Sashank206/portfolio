@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    fetch('src/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('src/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+});
+
+  </script>
+  <style>
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    form {
+        background: #fff;
+        max-width: 400px;
+        margin: 30px auto;
+        padding: 25px 30px 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    label {
+        display: inline-block;
+        width: 110px;
+        font-weight: bold;
+        color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        width: 220px;
+        padding: 7px 8px;
+        margin-bottom: 5px;
+        border: 1px solid #bbb;
+        border-radius: 4px;
+        font-size: 1em;
+        transition: border 0.2s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus {
+        border: 1.5px solid #0078d7;
+        outline: none;
+    }
+
+    button[type="submit"] {
+        background: #0078d7;
+        color: #fff;
+        border: none;
+        padding: 9px 22px;
+        border-radius: 4px;
+        font-size: 1em;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background 0.2s;
+    }
+
+    button[type="submit"]:hover {
+        background: #005fa3;
+    }
+
+    .connect {
+        max-width: 400px;
+        margin: 30px auto 0 auto;
+        background: #fff;
+        padding: 18px 30px 15px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .connect h3 {
+        margin-top: 0;
+        color: #333;
+        font-size: 1.1em;
+    }
+
+    .connect ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 18px;
+    }
+
+    .connect li {
+        display: inline-block;
+    }
+
+    .link {
+        vertical-align: middle;
+        transition: transform 0.15s;
+    }
+
+    .link:hover {
+        transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+    <div id="header"></div>
+  <form id="myForm">
+    <h2><strong>Contact Me</strong></h2><br>
+    <label for="name">Name: </label>
+    <input type="text" id="name">
+    <br>
+    <span class="error" id="nameError"></span>
+    <br>
+
+    <label for="email">Email: </label>
+    <input type="email" id="email"><br>
+    <span class="error" id="emailError"></span>
+    <br>
+
+    <label for="phonenumber">Phone Number:</label>
+    <input type="tel" id="phonenumber" placeholder="1234567890"><br>
+    <span class="error" id="phoneError"></span>
+    <br>
+
+    <button type="submit">Submit</button>
+  </form>
+  <div class="connect">
+    <h3>Connect with me on:</h3>
+      <ul>
+        <li>
+          <a href="mailto:durgaramsashank2006@gmail.com">
+            <img class="link" src="https://img.icons8.com/ios-filled/20/000000/new-post.png" alt="Email"> 
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/sashank12/" target="_blank">
+            <img class="link" src="https://img.icons8.com/ios-filled/20/000000/linkedin.png" alt="LinkedIn"> 
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Sashank206" target="_blank">
+            <img class="link" src="https://img.icons8.com/ios-glyphs/20/000000/github.png" alt="GitHub"> 
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/sampleprofile" target="_blank">
+            <img class="link" src="https://img.icons8.com/ios-filled/20/000000/twitter.png" alt="Twitter"> 
+          </a>
+        </li>
+      </ul>
+
+  </div>
+  <div id="footer"></div>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let number = document.getElementById("phonenumber").value.trim();
+
+      // Access error spans
+      let nameError = document.getElementById("nameError");
+      let emailError = document.getElementById("emailError");
+      let phoneError = document.getElementById("phoneError");
+
+      // Reset previous errors
+      nameError.textContent = "";
+      emailError.textContent = "";
+      phoneError.textContent = "";
+
+      let isValid = true;
+
+      // Name validation
+      if (name === "") {
+        nameError.textContent = "Name is required!";
+        isValid = false;
+      }
+
+      // Email validation
+      let emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+      if (!emailPattern.test(email)) {
+        emailError.textContent = "Enter a valid email!";
+        isValid = false;
+      }
+
+      // Phone validation
+      if (phonenumber.length < 10 || phonenumber.length > 10 || isNaN(phonenumber)) {
+        phoneError.textContent = "Phone number must be 10 digits!";
+        isValid = false;
+      }
+
+      // If valid, show alert and reset form
+      if (isValid) {
+        alert("Form successfully submitted!");
+        document.getElementById("myForm").reset();
+      }
+    });
+  </script>
+</body>
+</html>

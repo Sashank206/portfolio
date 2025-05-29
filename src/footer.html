@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+</head>
+<style>
+.footer {
+  background-color: #111827;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer img {
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+  /* Example: gold color for logo using filter (if SVG, use fill) */
+  filter: invert(67%) sepia(90%) saturate(1000%) hue-rotate(1deg) brightness(1.1);
+}
+.footer-body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a13;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f3f4f6; /* Light gray text */
+}
+
+.quick,.contact,.social h4 {
+  color: #fbbf24;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.quick ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quick ul li {
+  margin: 8px 0;
+  color: #d1d5db; /* Subtle link color */
+}
+
+ul li a {
+  color: #d1d5db;
+  text-decoration: none;
+}
+
+.social ul li a img {
+  filter: none;
+  transition: filter 0.2s, background 0.2s;
+  background: #fff;
+  padding: 3px;
+}
+
+/* Uniform gold background for social icons */
+.social ul li a img {
+  background: #fbbf24;
+}
+
+.social ul li a img:hover {
+  filter: brightness(1.2) drop-shadow(0 0 6px #fde68a);
+}
+
+ul li a:hover {
+  color: #fde68a;
+}
+
+.social button {
+  margin-top: 18px;
+  padding: 10px 28px;
+  background-color: #fbbf24;
+  color: #0a0a13;
+  border: none;
+  border-radius: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.social button:hover {
+  background-color: #fde68a;
+  color: #0a0a13;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: #0f172a;
+  padding: 40px 60px;
+  gap: 30px;
+}
+
+.quick,
+.social,
+.contact {
+  flex: 1;
+  min-width: 220px;
+}
+
+.quick {
+  text-align: left;
+}
+
+.social {
+  text-align: center;
+}
+
+.contact {
+  text-align: left;
+}
+.contact img {
+  filter: brightness(0) invert(1);
+}
+.social ul {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.contact ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact ul li img {
+  margin-right: 12px;
+  min-width: 20px;
+}
+
+.contact ul li a {
+  color: #d1d5db;
+  text-decoration: none;
+  /* word-break: break-all; */
+}
+
+.contact ul li a:hover {
+  color: #fde68a;
+}
+.link-img {
+  filter: invert(90%);
+}
+
+a img:hover {
+  filter: brightness(150%);
+}
+.aboutme {
+    flex: 1;
+    min-width: 220px;
+    text-align: left;
+    color: #d1d5db;
+  }
+  .aboutme h4 {
+    color: #fbbf24;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  .aboutme p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #d1d5db;
+    }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .quick,
+  .social,
+  .contact {
+    text-align: center;
+  }
+
+  .social ul {
+    justify-content: center;
+  }
+  .aboutme {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+</style>
+<body class="footer-body">
+  <div class="footer-container">
+    <div class="quick">
+      <h4 >Quick Links</h4>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="aboutme">
+      <h4>About Me</h4>
+      <p>
+        Hi, I'm Boddu Durga Ram Sashank, a passionate developer focused on building impactful web experiences. I enjoy learning new technologies and solving real-world problems through code.
+      </p>
+    </div>
+    <div class="social">
+      <h4>Connect</h4>
+      <ul>
+        <li>
+          <a href="mailto:durgaramsashank2006@gmail.com">
+            <img class="link" src="https://img.icons8.com/ios-filled/20/000000/new-post.png" alt="Email"> 
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/sashank12/" target="_blank">
+            <img class="link" src="https://img.icons8.com/ios-filled/20/000000/linkedin.png" alt="LinkedIn"> 
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Sashank206" target="_blank">
+            <img class="link" src="https://img.icons8.com/ios-glyphs/20/000000/github.png" alt="GitHub"> 
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/sampleprofile" target="_blank">
+            <img class="link" src="https://img.icons8.com/ios-filled/20/000000/twitter.png" alt="Twitter"> 
+          </a>
+        </li>
+      </ul>
+      <button><a href="../contact.html">Contact us</a></button>
+    </div>
+    <div class="contact">
+      <h4>Contact Info</h4>
+      <ul>
+        <li>
+          <img src="https://img.icons8.com/ios-filled/20/000000/phone.png" alt="Phone" style="margin-right:5px;">
+          <a href="tel:+918885771799">+91 8885771799</a>
+        </li>
+        <li>
+          <img src="https://img.icons8.com/ios-filled/20/000000/new-post.png" alt="Email" style="margin-right:5px;">
+          <a href="mailto:durgaramsashank2006@gmail.com">durgaramsashank2006@gmail.com</a>
+        </li>
+        <li>
+          <img src="https://img.icons8.com/ios-filled/20/000000/marker.png" alt="Address" style="margin-right:5px;">
+          <a> Maruteru,West Godavari, Andhra Pradesh, India</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 Boddu Durga Ram Sashank. All rights reserved.</p>
+  </div>
+</body>
+
+</html>
