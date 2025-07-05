@@ -1,17 +1,48 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+/* Base — mobile-first */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
 }
-body{
-    background: linear-gradient(to right, #1e40af 0%, #8b5cf6 50%, #6d28d9 75%, #7c3aed 90%, #6d28d9 100%);
-    color: #f3f4f6;
-    font-family: 'Ludica', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 16px;
+body {
+  font-size: 16px;
+  font-family: 'Ludica', sans-serif;
+  color: #f3f4f6;
+  background: linear-gradient(
+    to right,
+    #1e40af 0%,
+    #8b5cf6 50%,
+    #6d28d9 75%,
+    #7c3aed 90%,
+    #6d28d9 100%
+  );
 }
+
+/* Tablet and larger */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+    padding: 1rem;
+  }
+  /* Example: 2-column layout */
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Desktop and larger */
+@media (min-width: 1024px) {
+  body {
+    font-size: 20px;
+    padding: 2rem;
+  }
+  .content {
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+}
+
 /* Home */
 
 .Home {
