@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 });
-
 // Footer
 document.addEventListener("DOMContentLoaded", function() {
     fetch('src/footer.html')
