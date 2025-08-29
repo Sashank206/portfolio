@@ -4,8 +4,18 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.text())
         .then(data => {
             document.getElementById('header').innerHTML = data;
+
+            // Now add hamburger toggle logic
+            const btn = document.getElementById('menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
         });
 });
+
 // Footer
 document.addEventListener("DOMContentLoaded", function() {
     fetch('src/footer.html')

@@ -1,24 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>header</title>
-</head>
-<body>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <div class="header flex items-center justify-between p-6 bg-gradient-to-r from-blue-700 via-purple-500 to-purple-900 text-white">
-<h1 class="text-3xl font-bold ml-12 mr-12">B Sashank</h1>
-<nav>
-    <ul class="flex space-x-8 text-lg font-medium cursor-pointer ml-12 mr-12">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<header class="bg-gradient-to-r from-blue-700 via-purple-500 to-purple-900 text-white">
+  <div class="container mx-auto flex items-center justify-between p-4">
+    
+    <!-- Logo / Name -->
+    <h1 class="text-2xl font-bold">B Sashank</h1>
+    
+    <!-- Desktop Nav -->
+    <nav class="hidden md:block">
+      <ul class="flex space-x-8 text-lg font-medium">
         <li class="hover:text-yellow-400 transition-colors"><a href="/index.html">Home</a></li>
         <li class="hover:text-yellow-400 transition-colors"><a href="/about.html">About</a></li>
         <li class="hover:text-yellow-400 transition-colors"><a href="#projects">Projects</a></li>
         <li class="hover:text-yellow-400 transition-colors"><a href="#education">Education</a></li>
         <li class="hover:text-yellow-400 transition-colors"><a href="/contact.html">Contact</a></li>
-    </ul>
-</nav>
-</div>
+      </ul>
+    </nav>
 
-</body>
-</html>
+    <!-- Hamburger Button (Mobile) -->
+    <button id="menu-btn" class="md:hidden focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" 
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-purple-800">
+    <ul class="flex flex-col space-y-4 p-4 text-lg font-medium">
+      <li class="hover:text-yellow-400 transition-colors"><a href="/index.html">Home</a></li>
+      <li class="hover:text-yellow-400 transition-colors"><a href="/about.html">About</a></li>
+      <li class="hover:text-yellow-400 transition-colors"><a href="#projects">Projects</a></li>
+      <li class="hover:text-yellow-400 transition-colors"><a href="#education">Education</a></li>
+      <li class="hover:text-yellow-400 transition-colors"><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  // Toggle Mobile Menu
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
